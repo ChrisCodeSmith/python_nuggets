@@ -1,4 +1,7 @@
 def cardval(card):
+    """
+    Function to return int values for comparison
+    """
     if card == 'J' or card=='Q' or card=='K':
         return int(10)
     elif card == 'A':
@@ -7,6 +10,9 @@ def cardval(card):
         return int(card)
 
 def calc_hand_sum(hand):
+    """
+    We sort the hand so we get all aces at last. We can now check if every ace would exceed the 21 while iterating over the hand and count it as 1 if so.
+    """
     handsum = 0
     hand.sort(key=cardval)
     for item in hand:
